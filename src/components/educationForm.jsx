@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+//import '../styles/education.css';
 
 function Heading(props) {
   return <h3>{props.text}</h3>;

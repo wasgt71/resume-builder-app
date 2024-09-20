@@ -1,13 +1,24 @@
 #div {
-    z-index: 1;
-    position: absolute;
-    margin-left: 200px;
+   position: absolute;
+   align-items: center;
+   justify-content: center;
+   border-right: 1px solid black;
+  
+   
+  
+   width: 45%;
+   
     }
     
-    #output {
-    margin-left: 700px;
+   #first, #last, #phone, #email {
+   width: 90%;
+   height: 30px;
+   border-radius: 5px;
    margin-top: 10px;
-    z-index: 1;
-    }
+   }
 
+#output {
+position: absolute;
+margin-left: 55%;
 
+}

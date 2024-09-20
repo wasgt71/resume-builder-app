@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+//import '../styles/practical.css';
 
 function Heading(props) {
   return <h3>{props.text}</h3>;
@@ -30,7 +31,7 @@ function Experience() {
 
   return (
     <>
-      <div id="yes">
+      <div id="div">
         <form>
           <legend>Company Name</legend>
           <InputValue id="company"></InputValue>

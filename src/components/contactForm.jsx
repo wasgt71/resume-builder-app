@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import '../styles/contact.css';
 
 function Heading(props) {
   return <h3>{props.text}</h3>;
@@ -11,6 +11,10 @@ function InputValue(props) {
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
+
+  const Reset = () => {
+  const [inputValue, resetInputValue] = useState(inputValue);
+  }
 
   return (
     <input

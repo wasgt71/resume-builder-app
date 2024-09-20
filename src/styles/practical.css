@@ -1,0 +1,13 @@
+#yes {
+   
+    align-items: center;
+    justify-content: center;
+    
+     }
+     
+    #company, #position, #main, #from, #to {
+    width: 40%;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+    }
