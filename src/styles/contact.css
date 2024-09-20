@@ -1,0 +1,13 @@
+#div {
+    z-index: 1;
+    position: absolute;
+    margin-left: 200px;
+    }
+    
+    #output {
+    margin-left: 700px;
+   margin-top: 10px;
+    z-index: 1;
+    }
+
+
