@@ -1,57 +1,53 @@
 import React, { useState } from "react";
-//import '../styles/education.css';
+import '../styles/education.css';
 
 function Heading(props) {
   return <h3>{props.text}</h3>;
 }
 
-function InputValue(props) {
-  const [inputValue, setInputValue] = useState("");
-  const id = props.id;
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
+function InputValue({id, value , onChange}) {
+
+  
 
   return (
-    <input
-      type="text"
-      id={props.id}
-      value={inputValue}
-      onChange={handleInputChange}
-    />
+    
+    <input id={id} value={value} onChange={onChange}></input>
+    
   );
 }
 
-function Education() {
-  const [showHeading, setShowHeading] = useState(false);
 
-  const addValue = () => {
-    setShowHeading(true);
-  };
+function Education() {
+  
+const [formData, setFormData] = useState({
+SchoolName: "",
+TitleOfStudy: "",
+DateOfStudy: "",
+})
+
+
+const handleChange = (e) => {
+const { id, value } = e.target;
+setFormData((prevData) => ({
+...prevData,
+[id]: value
+}));
+};
+
+
 
   return (
     <>
       <div id="yes">
         <form>
           <legend>School Name</legend>
-          <InputValue id="school"></InputValue>
+          <InputValue id="school" onChange={handleChange}></InputValue>
           <legend>Title of Study</legend>
           <InputValue id="study"></InputValue>
           <legend>Date of Study</legend>
           <InputValue id="date"></InputValue>
-          <button type="button" onClick={addValue}>
-            Add Info
-          </button>
         </form>
-        {showHeading && (
-          <Heading text={document.getElementById("school").value} />
-        )}
-        {showHeading && (
-          <Heading text={document.getElementById("study").value} />
-        )}
-        {showHeading && (
-          <Heading text={document.getElementById("date").value} />
-        )}
+      <Heading text={`${formData.school}`}></Heading>
       </div>
     </>
   );

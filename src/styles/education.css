@@ -1,17 +1,26 @@
 #yes {
-    align-items: center;
-    justify-content: center;
-    border-right: 1px solid black;
-    width: 45%;
+    position: absolute;
+   align-items: center;
+   justify-content: center;
+   border-right: 1px solid black;
+   margin-top: 279px;
+  
    
-   
+  
+   width: 45%;
      }
      
     #school, #study, #date {
-    width: 40%;
-    height: 30px;
-    border-radius: 5px;
-    margin-top: 10px;
+     width: 90%;
+     height: 30px;
+     border-radius: 5px;
+     margin-top: 10px;
     }
  
  
+
+    #output {
+        position: absolute;
+        margin-left: 55%;
+        
+        }
