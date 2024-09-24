@@ -2,16 +2,32 @@ import React, { useState, useEffect } from "react";
 import '../styles/contact.css';
 
 
-
-
-
 function Heading(props) {
   return <h3>{props.text}</h3>;
 }
 
+function SubmitButton({ onClick }) {
+  return (
+    <>
+      <button type="button" onClick={onClick}>
+        Submit
+      </button>
+    </>
+  );
+}
+
+function EditButton({ onClick }) {
+  return (
+    <>
+      <button type="button" onClick={onClick}>
+        Personal-Info
+      </button>
+    </>
+  );
+}
 
 
-function InputValue({id, value, onChange}) {
+function InputValue({id, value, onChange, placeholder}) {
  
 
 
@@ -19,7 +35,7 @@ return(
 
 <>
 
-<input id={id} value={value} onChange={onChange}></input>
+<input id={id} value={value} onChange={onChange} placeholder={placeholder}></input>
 
 
 </>
@@ -52,40 +68,45 @@ setFormData((prevData) => ({
 }))
 };
 
-const handleSubmit = () => {
-  setSubmittedData(formData);
-  // Optionally reset form data
-console.log(formData);
-};
+const submitChange = () => {
   
+  setLock(false);
+  setVisible(true);
+};
 
 
-
-   //const addValue = () => {
-   // setShowHeading(true);
-
-  //};
-
-  //const resetValue = () => {
-  //  setShowHeading();
+const [unlocked, setLock] = useState(false);
+  const editFields = () => {
+    setLock(true);
+    setVisible(false);
+  };
     
-  //}
-    
+  const [editVisible, setVisible] = useState(true);
   
   return (
     <>
       <div id="div">
         <form>
-          <legend>First Name</legend>
-          <InputValue id="first" value={formData.first} onChange={handleChange}></InputValue>
-          <legend>Last Name</legend>
-          <InputValue id="last" value={formData.last} onChange={handleChange}></InputValue>
-          <legend>Phone Number</legend>
-          <InputValue id="phone" value={formData.phone} onChange={handleChange}></InputValue>
-          <legend>Email</legend>
-          <InputValue id="email" value={formData.email} onChange={handleChange}></InputValue>
-          <button type="button" onClick={handleSubmit}>Submit
-          </button>
+         {unlocked && (
+          <InputValue id="first" value={formData.first} onChange={handleChange} placeholder="First Name"></InputValue>
+         )}
+         {unlocked && (
+          <InputValue id="last" value={formData.last} onChange={handleChange} placeholder="Last Name"></InputValue>
+         )}
+         {unlocked && (
+          <InputValue id="phone" value={formData.phone} onChange={handleChange} placeholder="Phone Number"></InputValue>
+         )}
+         {unlocked && (
+          <InputValue id="email" value={formData.email} onChange={handleChange} placeholder="Email"></InputValue>
+         )}
+          {unlocked && (
+          <SubmitButton onClick={submitChange}></SubmitButton>
+        )}
+        {editVisible && (
+          <EditButton onClick={editFields}></EditButton>
+        )}
+       
+        
 
         </form>
         </div>

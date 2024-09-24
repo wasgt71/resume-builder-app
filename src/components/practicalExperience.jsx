@@ -1,68 +1,135 @@
 import React, { useState } from "react";
-//import '../styles/practical.css';
+import '../styles/practical.css';
 
 function Heading(props) {
   return <h3>{props.text}</h3>;
 }
+function SubmitButton({ onClick }) {
+  return (
+    <>
+      <button type="button" onClick={onClick}>
+        Submit
+      </button>
+    </>
+  );
+}
 
-function InputValue(props) {
-  const [inputValue, setInputValue] = useState("");
-  const id = props.id;
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
+function EditButton({ onClick }) {
+  return (
+    <>
+      <button type="button" onClick={onClick}>
+        Experience
+      </button>
+    </>
+  );
+}
 
+function InputValue({ id, value, onChange, placeholder }) {
   return (
     <input
-      type="text"
-      id={props.id}
-      value={inputValue}
-      onChange={handleInputChange}
-    />
+      id={id}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+    ></input>
   );
 }
 
 function Experience() {
-  const [showHeading, setShowHeading] = useState(false);
+  const [formData, setFormData] = useState({
+    companyname: "",
+    positiontitle: "",
+    responsibilitys: "",
+    datestart: "",
+    dateend: ""
+  });
 
-  const addValue = () => {
-    setShowHeading(true);
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+
+    console.log(formData);
   };
+
+  const [editText, submitText] = useState(false);
+
+  const submitChange = () => {
+    submitText(true);
+    setLock(false);
+    setVisible(true);
+  };
+
+  const [unlocked, setLock] = useState(false);
+  const editFields = () => {
+    setLock(true);
+    setVisible(false);
+  };
+
+  const [editVisible, setVisible] = useState(true);
 
   return (
     <>
-      <div id="div">
+      <div id="pracexp">
         <form>
-          <legend>Company Name</legend>
-          <InputValue id="company"></InputValue>
-          <legend>Position Title</legend>
-          <InputValue id="position"></InputValue>
-          <legend>Main Responsibilities</legend>
-          <InputValue id="main"></InputValue>
-          <legend>Date From</legend>
-          <InputValue id="from"></InputValue>
-          <legend>Date To</legend>
-          <InputValue id="to"></InputValue>
-          <button type="button" onClick={addValue}>
-            Add Info
-          </button>
+          {unlocked && (
+            <InputValue
+              id="companyname"
+              value={formData.companyname}
+              onChange={handleChange}
+              placeholder="Company Name"
+            ></InputValue>
+          )}
+
+          {unlocked && (
+            <InputValue
+              id="positiontitle"
+              value={formData.positiontitle}
+              onChange={handleChange}
+              placeholder="Position Title"
+            ></InputValue>
+          )}
+
+          {unlocked && (
+            <InputValue
+              id="responsibilitys"
+              value={formData.responsibilitys}
+              onChange={handleChange}
+              placeholder="Main Resposibilities"
+            ></InputValue>
+          )}
+
+         {unlocked && (
+            <InputValue
+              id="datestart"
+              value={formData.datestart}
+              onChange={handleChange}
+              placeholder="Date From"
+            ></InputValue>
+          )}
+  {unlocked && (
+            <InputValue
+              id="dateend"
+              value={formData.dateend}
+              onChange={handleChange}
+              placeholder="Date To"
+            ></InputValue>
+          )}
+          {unlocked && <SubmitButton onClick={submitChange}></SubmitButton>}
+
+          {editVisible && <EditButton onClick={editFields}></EditButton>}
         </form>
-        {showHeading && (
-          <Heading text={document.getElementById("company").value} />
-        )}
-        {showHeading && (
-          <Heading text={document.getElementById("position").value} />
-        )}
-        {showHeading && (
-          <Heading text={document.getElementById("main").value} />
-        )}
-        {showHeading && (
-          <Heading text={document.getElementById("from").value} />
-        )}
-        {showHeading && <Heading text={document.getElementById("to").value} />}
+        {editText && <Heading text={`${formData.companyname}`}></Heading>}
+        {editText && <Heading text={`${formData.positiontitle}`}></Heading>}
+        {editText && <Heading text={`${formData.responsibilitys}`}></Heading>}
+        {editText && <Heading text={`${formData.datestart}`}></Heading>}
+        {editText && <Heading text={`${formData.dateend}`}></Heading>}
       </div>
     </>
   );
 }
+
 
 export default Experience;

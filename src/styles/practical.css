@@ -1,8 +1,8 @@
-#yes {
-   
+#pracexp {
     align-items: center;
     justify-content: center;
-    
+    position: absolute;
+    margin-top: 500px;
      }
      
     #company, #position, #main, #from, #to {
