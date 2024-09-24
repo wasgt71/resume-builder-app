@@ -5,7 +5,20 @@ function Heading(props) {
   return <h3>{props.text}</h3>;
 }
 
-function InputValue({id, value , onChange}) {
+function SubmitButton({onClick}) {
+
+
+return(
+<>
+<button type="button" onClick={onClick}>Submit</button>
+
+</>
+
+)
+
+}
+
+function InputValue({id, value, onChange}) {
 
   
 
@@ -20,7 +33,7 @@ function InputValue({id, value , onChange}) {
 function Education() {
   
 const [formData, setFormData] = useState({
-SchoolName: "",
+school: "",
 TitleOfStudy: "",
 DateOfStudy: "",
 })
@@ -29,25 +42,58 @@ DateOfStudy: "",
 const handleChange = (e) => {
 const { id, value } = e.target;
 setFormData((prevData) => ({
-...prevData,
-[id]: value
-}));
+  ...prevData,
+  [id]: value
+  }));
+
+  console.log(formData);
 };
 
+const [editText, submitText] = useState(false)
 
+const submitChange = () => {
+submitText(true)
+setLock(false);
+}
+
+const [unlocked, setLock] = useState(false)
+const editFields = () => {
+setLock(true);
+}
 
   return (
     <>
+    
       <div id="yes">
-        <form>
-          <legend>School Name</legend>
-          <InputValue id="school" onChange={handleChange}></InputValue>
-          <legend>Title of Study</legend>
+       <form>
+       
+          
+      {unlocked && (
+          <InputValue id="school" value={formData.school} onChange={handleChange}></InputValue>
+       )}
+          
+          {unlocked && (
           <InputValue id="study"></InputValue>
-          <legend>Date of Study</legend>
+          )}
+          
+          {unlocked && (
           <InputValue id="date"></InputValue>
+          )}
+
+          {unlocked && (
+          <SubmitButton onClick={submitChange}>Submit</SubmitButton>
+          )}
+          
+          <button type="button" onClick={editFields}>Education</button>
+          
+          
+       
         </form>
+      {editText && (
       <Heading text={`${formData.school}`}></Heading>
+      )}
+  
+     
       </div>
     </>
   );
