@@ -1,11 +1,19 @@
 #footer {
 background-color:  #4681f4;
-margin-top: 750px;
+margin-top: 763.3px;
 position: absolute;
-width: 98.9%;
+width: 100%;
+margin-left: -8px;
 height: 5%;
 padding: 0px;
 text-align: center;
+
+}
+
+#p {
+    font-family: Andale mono, monospsace;
+    color: #fff;
+
 }
 
 

@@ -9,7 +9,7 @@ function Heading(props) {
 function SubmitButton({ onClick }) {
   return (
     <>
-      <button type="button" onClick={onClick}>
+      <button id="submit-contact" type="button" onClick={onClick}>
         Submit
       </button>
     </>

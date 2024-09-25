@@ -8,7 +8,7 @@ function Heading(props) {
 function SubmitButton({ onClick }) {
   return (
     <>
-      <button type="button" onClick={onClick}>
+      <button id="submit-education" type="button" onClick={onClick}>
         Submit
       </button>
     </>
@@ -39,6 +39,7 @@ function InputValue({ id, value, onChange, placeholder }) {
 function Education() {
   const [formData, setFormData] = useState({
     school: "",
+    place: "",
     study: "",
     date: "",
   });
@@ -78,6 +79,15 @@ function Education() {
               id="school"
               value={formData.school}
               onChange={handleChange}
+              placeholder="School Of Study"
+            ></InputValue>
+          )}
+
+{unlocked && (
+            <InputValue
+              id="place"
+              value={formData.place}
+              onChange={handleChange}
               placeholder="Place Of Study"
             ></InputValue>
           )}
@@ -107,6 +117,7 @@ function Education() {
         </div>
         <div id="edu-output">
         {editText && <Heading text={`${formData.school}`}></Heading>}
+        {editText && <Heading text={`${formData.place}`}></Heading>}
         {editText && <Heading text={`${formData.study}`}></Heading>}
         {editText && <Heading text={`${formData.date}`}></Heading>}
       </div>

@@ -7,7 +7,7 @@ function Heading(props) {
 function SubmitButton({ onClick }) {
   return (
     <>
-      <button type="button" onClick={onClick}>
+      <button id="submit-practical" type="button" onClick={onClick}>
         Submit
       </button>
     </>
@@ -40,8 +40,8 @@ function Experience() {
     companyname: "",
     positiontitle: "",
     responsibilitys: "",
-    datestart: "",
-    dateend: ""
+    datestartend: ""
+    
   });
 
   const handleChange = (e) => {
@@ -103,20 +103,13 @@ function Experience() {
 
          {unlocked && (
             <InputValue
-              id="datestart"
-              value={formData.datestart}
+              id="datestartend"
+              value={formData.datestartend}
               onChange={handleChange}
-              placeholder="Date From"
+              placeholder="Date From - Date To"
             ></InputValue>
           )}
-  {unlocked && (
-            <InputValue
-              id="dateend"
-              value={formData.dateend}
-              onChange={handleChange}
-              placeholder="Date To"
-            ></InputValue>
-          )}
+
           {unlocked && <SubmitButton onClick={submitChange}></SubmitButton>}
 
           {editVisible && <EditButton onClick={editFields}></EditButton>}
@@ -126,8 +119,8 @@ function Experience() {
         {editText && <Heading text={`${formData.companyname}`}></Heading>}
         {editText && <Heading text={`${formData.positiontitle}`}></Heading>}
         {editText && <Heading text={`${formData.responsibilitys}`}></Heading>}
-        {editText && <Heading text={`${formData.datestart}`}></Heading>}
-        {editText && <Heading text={`${formData.dateend}`}></Heading>}
+        {editText && <Heading text={`${formData.datestartend}`}></Heading>}
+        
       </div>
     </>
   );
