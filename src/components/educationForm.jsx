@@ -18,7 +18,7 @@ function SubmitButton({ onClick }) {
 function EditButton({ onClick }) {
   return (
     <>
-      <button type="button" onClick={onClick}>
+      <button id="education-info" type="button" onClick={onClick}>
         Education
       </button>
     </>
@@ -104,6 +104,8 @@ function Education() {
 
           {editVisible && <EditButton onClick={editFields}></EditButton>}
         </form>
+        </div>
+        <div id="edu-output">
         {editText && <Heading text={`${formData.school}`}></Heading>}
         {editText && <Heading text={`${formData.study}`}></Heading>}
         {editText && <Heading text={`${formData.date}`}></Heading>}

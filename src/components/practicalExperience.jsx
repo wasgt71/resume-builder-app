@@ -17,7 +17,7 @@ function SubmitButton({ onClick }) {
 function EditButton({ onClick }) {
   return (
     <>
-      <button type="button" onClick={onClick}>
+      <button id="practical-info" type="button" onClick={onClick}>
         Experience
       </button>
     </>
@@ -121,6 +121,8 @@ function Experience() {
 
           {editVisible && <EditButton onClick={editFields}></EditButton>}
         </form>
+        </div>
+        <div id="practical-output">
         {editText && <Heading text={`${formData.companyname}`}></Heading>}
         {editText && <Heading text={`${formData.positiontitle}`}></Heading>}
         {editText && <Heading text={`${formData.responsibilitys}`}></Heading>}

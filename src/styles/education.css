@@ -1,9 +1,12 @@
 #yes {
-    position: absolute;
-   align-items: center;
-   justify-content: center;
-   border-right: 1px solid black;
-   margin-top: 279px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 4px 1px rgb(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 45%;
+  height: 30%;
+  margin-top: 250px;
   
    
   
@@ -19,8 +22,25 @@
  
  
 
-    #output {
-        position: absolute;
-        margin-left: 55%;
-        
-        }
+    #edu-output {
+      position: absolute;
+      margin-left: 55%;
+      color: black;
+      margin-top: 279px;
+      }
+
+        #education-info {
+          margin-top: 65px;
+          border-radius: 5px;
+          background: #4681f4;
+          color: #fff;
+          width: 80%;
+          padding: 5%;
+          font-size: 2rem;
+          box-shadow: 2px 2px 4px 0px rgb(0, 0, 0, 0.2);
+          border: 2px solid #fff;
+          margin-left: 9%;
+          
+          
+          
+          }

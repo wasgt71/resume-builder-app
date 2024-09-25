@@ -19,7 +19,7 @@ function SubmitButton({ onClick }) {
 function EditButton({ onClick }) {
   return (
     <>
-      <button type="button" onClick={onClick}>
+      <button id="personal-info" type="button" onClick={onClick}>
         Personal-Info
       </button>
     </>

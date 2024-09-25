@@ -18,6 +18,7 @@ function App() {
    <div>
     <Experience></Experience>
    </div>
+   <footer id="footer"></footer>
   
     </>
   )
