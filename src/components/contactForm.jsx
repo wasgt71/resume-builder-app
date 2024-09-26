@@ -3,7 +3,7 @@ import '../styles/contact.css';
 
 
 function Heading(props) {
-  return <h3>{props.text}</h3>;
+  return <h3 id={props.id}>{props.text}</h3>;
 }
 
 function SubmitButton({ onClick }) {
@@ -49,10 +49,10 @@ return(
 
 function Contact() {
 const [formData, setFormData] = useState({
-  first: "",
-  last: "",
-  phone: "",
-  email: ""
+  first: "John",
+  last: "Doe",
+  phone: "444-444-4444",
+  email: "email@emailaddress.com"
 });
  
 
@@ -113,10 +113,10 @@ const [unlocked, setLock] = useState(false);
         <div id="output">
 
         
-            <Heading text={`${formData.first}`} />
-            <Heading text={`${formData.last}`} />
-            <Heading text={`${formData.phone}`} />
-            <Heading text={`${formData.email}`} />
+            <Heading id="first-name" text={`${formData.first}`} />
+            <Heading id="last-name" text={`${formData.last}`} />
+            <Heading id="phone-number" text={`${formData.phone}`} />
+            <Heading id="email-address" text={`${formData.email}`} />
           
         
 

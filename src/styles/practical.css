@@ -77,8 +77,24 @@
 
     #practical-output {
         position: absolute;
-        margin-left: 55%;
+        margin-left: 87%;
         color: black;
-        margin-top: 500px;
+        margin-top: 13%;
+        font-size: 20px;
 
+    }
+
+    #exp-div {
+    margin-top: 13%;
+    position: absolute;
+    margin-left: 78%;
+    font-size: 20px;
+
+    }
+
+    #exp-h3 {
+    margin-left: 82%;
+    margin-top: 12%;
+    position: absolute;
+    font-size: 30px;
     }

@@ -18,6 +18,7 @@ function App() {
    <div>
     <Experience></Experience>
    </div>
+  
    <footer id="footer">
    <div id="div-p">
       <p id="p">&copy; 2024 By Tristan Wassilyn. Made with tenacity.</p>

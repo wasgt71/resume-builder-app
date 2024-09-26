@@ -30,7 +30,9 @@
       position: absolute;
       margin-left: 55%;
       color: black;
-      margin-top: 279px;
+      margin-top: 13.5%;
+      font-size: 20px;
+      
       }
 
       #education-info {
@@ -83,3 +85,19 @@
             transition: visibility 0s 0.2s, opacity 0.2s linear;
          
          }
+
+         #headings {
+        margin-left: 49%;
+        font-size: 20px;
+        margin-top: 13.5%;
+        position: absolute;
+
+         }
+
+         #h3 {
+          position: absolute;
+          margin-left: 52%;
+          font-size: 30px;
+          margin-top: 12%;
+          
+          }

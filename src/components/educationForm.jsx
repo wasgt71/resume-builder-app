@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/education.css";
 
 function Heading(props) {
-  return <h3>{props.text}</h3>;
+  return <h5>{props.text}</h5>;
 }
 
 function SubmitButton({ onClick }) {
@@ -38,10 +38,10 @@ function InputValue({ id, value, onChange, placeholder }) {
 
 function Education() {
   const [formData, setFormData] = useState({
-    school: "",
-    place: "",
-    study: "",
-    date: "",
+    school: "FSU University",
+    place: "Orlando, Florida",
+    study: "Computer Science",
+    date: "2019-2024",
   });
 
   const handleChange = (e) => {
@@ -114,6 +114,16 @@ function Education() {
 
           {editVisible && <EditButton onClick={editFields}></EditButton>}
         </form>
+        </div>
+        <h3 id="h3">Education</h3>
+        <div id="headings">
+        <h5>School:</h5>
+        
+        <h5>Location:</h5>
+        
+        <h5>Title:</h5>
+        
+        <h5>Date:</h5>
         </div>
         <div id="edu-output">
         {editText && <Heading text={`${formData.school}`}></Heading>}
