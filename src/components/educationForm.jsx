@@ -83,7 +83,7 @@ function Education() {
             ></InputValue>
           )}
 
-{unlocked && (
+          {unlocked && (
             <InputValue
               id="place"
               value={formData.place}
@@ -114,18 +114,18 @@ function Education() {
 
           {editVisible && <EditButton onClick={editFields}></EditButton>}
         </form>
-        </div>
-        <h3 id="h3">Education</h3>
-        <div id="headings">
+      </div>
+      <h3 id="h3">Education</h3>
+      <div id="headings">
         <h5>School:</h5>
-        
+
         <h5>Location:</h5>
-        
+
         <h5>Title:</h5>
-        
+
         <h5>Date:</h5>
-        </div>
-        <div id="edu-output">
+      </div>
+      <div id="edu-output">
         {editText && <Heading text={`${formData.school}`}></Heading>}
         {editText && <Heading text={`${formData.place}`}></Heading>}
         {editText && <Heading text={`${formData.study}`}></Heading>}

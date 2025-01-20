@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../styles/practical.css';
+import "../styles/practical.css";
 
 function Heading(props) {
   return <h5>{props.text}</h5>;
@@ -40,8 +40,7 @@ function Experience() {
     companyname: "Tesla",
     positiontitle: "SoftWare Engineer",
     responsibilitys: "Design Software",
-    datestartend: "2019 - 2024"
-    
+    datestartend: "2019 - 2024",
   });
 
   const handleChange = (e) => {
@@ -101,7 +100,7 @@ function Experience() {
             ></InputValue>
           )}
 
-         {unlocked && (
+          {unlocked && (
             <InputValue
               id="datestartend"
               value={formData.datestartend}
@@ -114,24 +113,22 @@ function Experience() {
 
           {editVisible && <EditButton onClick={editFields}></EditButton>}
         </form>
-        </div>
-        <h3 id="exp-h3">Experience</h3>
-        <div id="exp-div">
-          <h5>Company:</h5>
-          <h5>Position:</h5>
-          <h5>Responsibilities:</h5>
-          <h5>Date:</h5>
-        </div>
-        <div id="practical-output">
+      </div>
+      <h3 id="exp-h3">Experience</h3>
+      <div id="exp-div">
+        <h5>Company:</h5>
+        <h5>Position:</h5>
+        <h5>Responsibilities:</h5>
+        <h5>Date:</h5>
+      </div>
+      <div id="practical-output">
         {editText && <Heading text={`${formData.companyname}`}></Heading>}
         {editText && <Heading text={`${formData.positiontitle}`}></Heading>}
         {editText && <Heading text={`${formData.responsibilitys}`}></Heading>}
         {editText && <Heading text={`${formData.datestartend}`}></Heading>}
-        
       </div>
     </>
   );
 }
-
 
 export default Experience;
